@@ -23,7 +23,7 @@ Using the Ruby-PayPal library is relatively simple:
 ## Initialize a paypal object
 
 ```ruby
-paypal = Paypal.new(<username>,<password>,<signature>,<url>)
+paypal = Paypal.new(,,,)
 ```
 The url is the paypal API to use: sandbox for development, normal for production:
 
@@ -57,24 +57,24 @@ The url is the paypal API to use: sandbox for development, normal for production
 ### For the Direct Payment using credit card payment, you need to use the
 DoDirectPayment APIs:
 
-	username = <PayPal API username>
-	password = <PayPal API password>
-	signature = <PayPal API signature>
+    username = 
+    password = 
+    signature = 
 
-	ipaddress = '192.168.1.1' # can be any IP address
-	amount = '100.00' # amount paid
-	card_type = 'VISA' # can be Visa, Mastercard, Amex etc
-	card_no = '4512345678901234' # credit card number
-	exp_date = '022010' # expiry date of the credit card
-	first_name = 'Sau Sheong'
-	last_name = 'Chang'
+    ipaddress = '192.168.1.1' # can be any IP address
+    amount = '100.00' # amount paid
+    card_type = 'VISA' # can be Visa, Mastercard, Amex etc
+    card_no = '4512345678901234' # credit card number
+    exp_date = '022010' # expiry date of the credit card
+    first_name = 'Sau Sheong'
+    last_name = 'Chang'
 
     paypal = Paypal.new(username, password, signature)
     response = paypal.do_direct_payment_sale(ipaddress, amount, card_type,
-			   card_no, exp_date, first_name, last_name)
-	if response.ack == 'Success' then
-	  # do your thing
-	end
+               card_no, exp_date, first_name, last_name)
+    if response.ack == 'Success' then
+      # do your thing
+    end
 
 The above code is for a final sale only.
 
